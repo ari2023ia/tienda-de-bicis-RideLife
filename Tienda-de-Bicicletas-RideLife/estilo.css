@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 200vh; /* Hace que la página mida el doble de la pantalla */
+    font-family: "Permanent Marker", cursive;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.fondo {
+    width: 100vw; /* Ocupa todo el ancho */
+    height: 100vh; /* Ocupa toda la altura de la pantalla */
+    object-fit: cover; /* Ajusta la imagen sin deformarla */
+    display: block; /* Asegura que no tenga márgenes extra */
+}
+.logo {
+    position: absolute; /* Lo saca del flujo normal para colocarlo encima */
+}
+.titulo {
+    position: absolute; /* Lo saca del flujo normal para colocarlo encima */
+    font-size: 48px; 
+    color: #a9ee39; 
+    top:92px;
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.7);
+    letter-spacing: 2px;
+}
+.titulo2 {
+    position: absolute; /* Lo saca del flujo normal para colocarlo encima */
+    font-size: 40px; 
+    color: #a9ee39; 
+    top:180px;
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.7);
+    letter-spacing: 2px;
+}
+
+@media (max-width: 432px) {
+    .fondo {
+        width: 900px;
+        height: auto;
+    }
+    .titulo {
+        font-size: 50px;
+        text-align: center;
+    }
+    .titulo2 {
+        top: 248px;
+    }
+}
+
+.carousel {
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    flex-direction: row; /* Cambio de dirección */
+    align-items: center;
+    top: 83%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    padding: 0 12px;
+    filter: drop-shadow(0 2px 2px #555);
+    will-change: transform, opacity;
+}
+
+.item-body {
+    width: 100%;
+    background-color: #00235767;
+    border-radius: 8px;
+    padding: 16px 20px;
+    text-align: center;
+}
+
+.title {
+    text-transform: uppercase;
+    font-size: 28px;
+    margin-top: 10px;
+}
+
+@keyframes carousel-animate-horizontal {
+    0% {
+        translate: 100% 0;
+        scale: 0.5;
+        opacity: 0;
+        visibility: hidden;
+    }
+    3%, 11% {
+        translate: 100% 0;
+        scale: 0.7;
+        opacity: 0.4;
+        visibility: visible;
+    }
+    14%, 22% {
+        translate: 0 0;
+        scale: 1;
+        opacity: 1;
+        visibility: visible;
+    }
+    25%, 33% {
+        translate: -100% 0;
+        scale: 0.7;
+        opacity: 0.4;
+        visibility: visible;
+    }
+    36% {
+        translate: -100% 0;
+        scale: 0.5;
+        opacity: 0;
+        visibility: visible;
+    }
+    100% {
+        translate: -100% 0;
+        scale: 0.5;
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+.item {
+    --animation-delay-fraction: 3s;
+    animation: carousel-animate-horizontal 27s linear infinite;
+    animation-delay: calc(var(--animation-delay-fraction) * (var(--index) - 1));
+    opacity: 0;
+}
+
+.titulo3 {
+    position: absolute; /* Lo saca del flujo normal para colocarlo encima */
+    font-size: 46px; 
+    color: #a9ee39; 
+    top:127%;
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.7);
+    letter-spacing: 2px;
+}
+
+.paravos {
+    background-color: #57230067;
+    border-radius: 8px;
+    padding: 16px 20px;
+    position: absolute;
+    top: 146%;
+    filter: drop-shadow(0 2px 2px #555);
+    text-align: center;
+    font-size: 28px;
+    color: #a9ee39;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.paravos2 {
+    background-color: #57230067;
+    border-radius: 8px;
+    padding: 16px 20px;
+    position: absolute;
+    top: 169%;
+    filter: drop-shadow(0 2px 2px #555);
+    text-align: center;
+    font-size: 28px;
+    color: #a9ee39;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.redes {
+    color: #a9ee39;
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    top: 200%;
+}
+
+.paravos:hover {
+    background-color: #38170067;
+    transform: scale(1.1);
+}
+.paravos2:hover {
+    background-color: #38170067; /* Oscurecer el color */
+    transform: scale(1.1);
+}
