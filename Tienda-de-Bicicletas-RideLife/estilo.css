@@ -6,7 +6,7 @@
 }
 
 body {
-    min-height: 200vh; /* Hace que la página mida el doble de la pantalla */
+    min-height: 100vh; /* Hace que la página mida el doble de la pantalla */
     font-family: "Permanent Marker", cursive;
     display: flex;
     flex-direction: column;
@@ -21,23 +21,32 @@ body {
 }
 .logo {
     position: absolute; /* Lo saca del flujo normal para colocarlo encima */
+    animation: aparecer 0.5s 0.4s forwards;
+    transform: translateY(-100%);
+    opacity: 0;
 }
 .titulo {
     position: absolute; /* Lo saca del flujo normal para colocarlo encima */
-    font-size: 48px; 
+    font-size: 44px; 
     color: #a9ee39; 
-    top:92px;
-    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.7);
+    top:96px;
+    text-shadow: -4px -4px 8px #0023579a;
     letter-spacing: 2px;
+    animation: aparecer 0.5s 1.4s forwards;
+    transform: translateY(-100%);
+    opacity: 0;
 }
-.titulo2 {
-    position: absolute; /* Lo saca del flujo normal para colocarlo encima */
-    font-size: 40px; 
-    color: #a9ee39; 
-    top:180px;
-    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.7);
-    letter-spacing: 2px;
-}
+@keyframes aparecer {
+    0% {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
 
 @media (max-width: 432px) {
     .fondo {
@@ -61,10 +70,9 @@ body {
     justify-content: center;
     flex-direction: row; /* Cambio de dirección */
     align-items: center;
-    top: 83%;
+    top: 68%;
     left: 50%;
     transform: translate(-50%, -50%);
-
 }
 
 .item {
@@ -79,11 +87,12 @@ body {
 
 .item-body {
     width: 100%;
-    background-color: #00235767;
+    background-color: #0023579a;
     border-radius: 8px;
     padding: 16px 20px;
     text-align: center;
 }
+
 
 .title {
     text-transform: uppercase;
@@ -137,12 +146,13 @@ body {
     opacity: 0;
 }
 
+
 .titulo3 {
     position: absolute; /* Lo saca del flujo normal para colocarlo encima */
     font-size: 46px; 
     color: #a9ee39; 
-    top:127%;
-    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.7);
+    top:114%;
+    text-shadow: -4px -4px 8px #0023579a;
     letter-spacing: 2px;
 }
 
@@ -174,13 +184,6 @@ body {
     transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
-.redes {
-    color: #a9ee39;
-    display: flex;
-    flex-direction: row;
-    position: absolute;
-    top: 200%;
-}
 
 .paravos:hover {
     background-color: #38170067;
@@ -189,4 +192,127 @@ body {
 .paravos2:hover {
     background-color: #38170067; /* Oscurecer el color */
     transform: scale(1.1);
+}
+
+.logos-redes {
+    width: 24px;
+    margin-left: 20px;
+}
+
+.catalogo-confiltro {
+    background-color: #0023579a;
+    width: 99%;
+    padding: 5px;
+    position: absolute;
+    top: 32%;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: row;
+}
+
+.filtros {
+    background-color: #0023579a;
+    width: 20%;
+    height: 100%;
+    padding: 5px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+}
+
+.catalogo {
+    background: linear-gradient(to right, #0023579a, #1a53ff4a, #0023579a);
+    width: 80%;
+    height: 100%;
+    padding: 5px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+}
+
+.titulo-filtros {
+    font-size: 22px; 
+    color: #a9ee39; 
+    text-shadow: 4px 4px 8px #0023579a;
+    letter-spacing: 2px;
+    margin-bottom: 14px;
+}
+
+.titulo-catalogo {
+    color: #a9ee39; 
+    text-shadow: -4px -4px 8px #0023579a;
+    letter-spacing: 2px;
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.text-filtros {
+    margin-left: 6px;
+    margin-bottom: 2px;
+    color: #a9ee39; 
+    text-shadow: -4px -4px 8px #0023579a;
+    letter-spacing: 2px;
+}
+
+.columna-de-filtros {
+    display: flex; 
+    flex-direction:row;
+    background: linear-gradient(to right, #0023579a, #1a53ff4a, #0023579a);
+}
+
+#contenido {
+    flex-grow: 1; /* Hace que el contenido crezca y ocupe todo el espacio disponible */
+    overflow-y: auto; /* Permite hacer scroll si el contenido crece */
+}
+  
+.redes {
+    color: #a9ee39;
+    position: fixed; /* Fija el div en la parte inferior de la pantalla */
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    background-color: #0023579a;
+    text-align: center;
+}
+
+.formulario-cita {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    width: 50%;
+    top: 30%;
+    background:linear-gradient(to right,#0023579a, #00008d78, #0023579a); 
+    color: #a9ee39;
+    border-radius: 12px;
+    padding: 12px;
+    gap: 4px;
+}
+
+.boton-cita {
+    background-color: #57230067;
+    border-radius: 8px;
+    padding: 10px 14px;
+    filter: drop-shadow(0 2px 2px #555);
+    text-align: center;
+    color: #a9ee39;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+.boton-cita:hover {
+    background-color: #38170067;
+    transform: scale(1.1);
+}
+
+.comprar{
+    background-color: #57230067;
+    border-radius: 8px;
+    padding: 10px 14px;
+    filter: drop-shadow(0 2px 2px #555);
+    text-align: center;
+    color: #a9ee39;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease;
 }
